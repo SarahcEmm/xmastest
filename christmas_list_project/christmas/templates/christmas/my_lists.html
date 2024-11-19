@@ -1,0 +1,7 @@
+<h1>My Christmas Lists</h1>
+<a href="{% url 'create_list' %}">Create New List</a>
+<ul>
+    {% for list in lists %}
+        <li><a href="{% url 'view_list' list.id %}">{{ list.title }}</a> ({{ list.visibility }})</li>
+    {% endfor %}
+</ul>

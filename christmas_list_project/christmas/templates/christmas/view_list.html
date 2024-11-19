@@ -1,0 +1,11 @@
+<h1>{{ gift_list.title }}</h1>
+<p>{{ gift_list.description }}</p>
+<ul>
+    {% for item in gift_list.items.all %}
+        <li>
+            {{ item.name }} - {{ item.description }}
+            {% if item.link %}<a href="{{ item.link }}">Buy Here</a>{% endif %}
+            {% if item.purchased %}<strong>(Purchased)</strong>{% endif %}
+        </li>
+    {% endfor %}
+</ul>
